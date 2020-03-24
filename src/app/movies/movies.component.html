@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+   -->
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>Movie Name</th>
+        <th>Average Vote </th>
+        <th>Vote Count </th>
+        <th>Movie Poster</th>
+        <th>Movie Details </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let movie of movies.results" (scrolled)="onScroll()">
+        <td>{{movie.title}}</td>
+        <td>{{movie.vote_average}}</td>
+        <td>{{movie.vote_count}}</td>
+        <td><img src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" width="50" height="60"></td>
+        <td><a [routerLink]="['/movies',movie.id]">Get Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>
+  
+  
